@@ -38,6 +38,7 @@ const ContactForm = () => {
           method="POST"
           netlify
           data-netlify-honeypot="bot-field"
+          action="/"
           style={{
             width: "100%",
             display: "flex",
