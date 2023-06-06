@@ -7,18 +7,23 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your logic here to handle the form submission (e.g., send email)
-    // You can access the form data via the state variables (name, email, message)
-    console.log("Form submitted!");
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
-    // Reset the form after submission
-    setName("");
-    setEmail("");
-    setMessage("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+  
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => navigate("/thank-you/"))
+      .catch((error) => alert(error));
+
+      setName("");
+      setEmail("");
+      setMessage("");
   };
 
   return (
