@@ -16,6 +16,7 @@ const ContactForm = () => {
               id="name"
               required
               placeholder="Entrez votre nom"
+              name="name"
             />
           </FormField>
           <FormField>
@@ -24,6 +25,7 @@ const ContactForm = () => {
               id="email"
               required
               placeholder="Entrez votre email"
+              name="email"
             />
           </FormField>
           <FormField>
@@ -31,6 +33,7 @@ const ContactForm = () => {
               id="message"
               required
               placeholder="Entrez votre demande"
+              name="message"
             />
           </FormField>
           <SubmitButton type="submit">envoyer</SubmitButton>
