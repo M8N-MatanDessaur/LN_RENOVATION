@@ -25,7 +25,8 @@ const ContactForm = () => {
     <Container>
       <FormContainer>
         <FormTitle>Envoyez nous votre demande</FormTitle>
-        <Form onSubmit={handleSubmit} id="contact-form" method="POST" netlify >
+        <Form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" >
+        <input type="hidden" name="form-name" value="contact" />
           <FormField>
             <Input
               type="text"
