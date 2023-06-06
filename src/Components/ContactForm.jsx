@@ -3,35 +3,18 @@ import styled from "styled-components";
 import gestion from "../Images/gestion-projet.jpg";
 
 const ContactForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Add your logic here to handle the form submission (e.g., send email)
-    // You can access the form data via the state variables (name, email, message)
-    console.log("Form submitted!");
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
-    // Reset the form after submission
-    setName("");
-    setEmail("");
-    setMessage("");
-  };
 
   return (
     <Container>
       <FormContainer>
         <FormTitle>Envoyez nous votre demande</FormTitle>
-        <Form onSubmit={handleSubmit} id="contact-form">
+        <Form action="https://api.web3forms.com/submit" method="POST" id="form">
+        <input type="hidden" name="access_key" value="7eb4362d-046f-40df-8bc3-9816007969df" />
           <FormField>
             <Input
               type="text"
               id="name"
               value={name}
-              onChange={(e) => setName(e.target.value)}
               required
               placeholder="Entrez votre nom"
             />
@@ -41,7 +24,6 @@ const ContactForm = () => {
               type="email"
               id="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Entrez votre email"
             />
@@ -50,7 +32,6 @@ const ContactForm = () => {
             <Textarea
               id="message"
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
               required
               placeholder="Entrez votre demande"
             />
