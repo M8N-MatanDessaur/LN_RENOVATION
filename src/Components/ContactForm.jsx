@@ -55,7 +55,7 @@ const ContactForm = () => {
               placeholder="Entrez votre demande"
             />
           </FormField>
-          <SubmitButton type="submit">e</SubmitButton>
+          <SubmitButton type="submit">envoyer</SubmitButton>
         </Form>
       </FormContainer>
       <Image></Image>
