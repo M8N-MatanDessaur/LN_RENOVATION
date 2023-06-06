@@ -14,7 +14,6 @@ const ContactForm = () => {
             <Input
               type="text"
               id="name"
-              value={name}
               required
               placeholder="Entrez votre nom"
             />
@@ -23,7 +22,6 @@ const ContactForm = () => {
             <Input
               type="email"
               id="email"
-              value={email}
               required
               placeholder="Entrez votre email"
             />
@@ -31,7 +29,6 @@ const ContactForm = () => {
           <FormField>
             <Textarea
               id="message"
-              value={message}
               required
               placeholder="Entrez votre demande"
             />
