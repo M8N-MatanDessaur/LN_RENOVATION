@@ -9,33 +9,38 @@ const ContactForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  
-    const myForm = event.target;
-    const formData = new FormData(myForm);
-  
+
+    const formData = new FormData(event.target);
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => navigate("/thank-you/"))
+      .then(() => alert("Form submitted successfully!"))
       .catch((error) => alert(error));
 
-      setName("");
-      setEmail("");
-      setMessage("");
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
     <Container>
       <FormContainer>
         <FormTitle>Envoyez nous votre demande</FormTitle>
-        <Form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" >
-        <input type="hidden" name="form-name" value="contact" />
+        <Form
+          onSubmit={handleSubmit}
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="contact" />
           <FormField>
             <Input
               type="text"
-              id="name"
+              name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -45,7 +50,7 @@ const ContactForm = () => {
           <FormField>
             <Input
               type="email"
-              id="email"
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -54,7 +59,7 @@ const ContactForm = () => {
           </FormField>
           <FormField>
             <Textarea
-              id="message"
+              name="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
