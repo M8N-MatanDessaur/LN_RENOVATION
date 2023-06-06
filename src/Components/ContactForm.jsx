@@ -32,7 +32,14 @@ const ContactForm = () => {
     <Container>
       <FormContainer>
         <FormTitle>Envoyez nous votre demande</FormTitle>
-        <Form
+        <form
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center"
+        }}
           onSubmit={handleSubmit}
           name="contact"
           method="POST"
@@ -70,7 +77,7 @@ const ContactForm = () => {
             />
           </FormField>
           <SubmitButton type="submit">envoyer</SubmitButton>
-        </Form>
+        </form>
       </FormContainer>
       <Image></Image>
     </Container>
