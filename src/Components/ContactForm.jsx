@@ -33,18 +33,18 @@ const ContactForm = () => {
       <FormContainer>
         <FormTitle>Envoyez nous votre demande</FormTitle>
         <form
-        style={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center"
-        }}
           onSubmit={handleSubmit}
           name="contact"
           method="POST"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
         >
           <input type="hidden" name="form-name" value="contact" />
           <FormField>
