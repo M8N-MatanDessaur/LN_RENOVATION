@@ -5,6 +5,20 @@
   color: #fff;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #0e0e0e
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #522d0560;
+  border-radius: 0.25rem;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -13,6 +27,13 @@
 }
 html, body {
   height: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+
 }
 body {
   line-height: 1.5;

@@ -6,7 +6,7 @@ export default function CompanyDetails() {
         <CompanyDetailsContainer>
             <CompanyTitle>— Entrepreneur Géneral —</CompanyTitle>
             <CompanyName>LNRENOVATION</CompanyName>
-            <CompanyQuote>Votre <Higlighted>maison</Higlighted>, Votre <Higlighted>style</Higlighted></CompanyQuote>
+            <CompanyQuote>votre <Higlighted>maison</Higlighted>, votre <Higlighted>style</Higlighted></CompanyQuote>
         </CompanyDetailsContainer>
     )
 }

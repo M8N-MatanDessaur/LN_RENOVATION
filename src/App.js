@@ -1,20 +1,39 @@
 import React from 'react';
+import { useRef } from 'react';
 import styled from 'styled-components';
 import TopPhoneBar from './Components/TopPhoneBar';
 import AboutUs from './Components/About';
 import CompanyDetails from './Components/CompanyDetails';
+import Services from './Components/Services';
+import ContactForm from './Components/ContactForm';
+import WhoWeAre from './Components/WhoWeAre';
 
 export default function App() {
+  const ref = useRef(null);
+  const doClick = () => {
+    ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
   return (
     <AppContainer>
+
       <TopPhoneBar />
+
       <LandingSection>
         <CompanyDetails />
         <AboutUs />
-        <ContactButton>Contactez nous</ContactButton>
+        <ContactButton onClick={doClick}>Contactez nous</ContactButton>
       </LandingSection>
+    
+      <WhoWeAre />
+
+      <Services />
+
+      <div ref={ref} style={{height:"100%"}}>
+      <ContactForm/>
+      </div>
+     
       <RBQ>RBQ : 5820-5246-01</RBQ>
-    </AppContainer>
+    </AppContainer >
   );
 }
 
@@ -22,10 +41,6 @@ const AppContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: #141414;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 `;
 
 const LandingSection = styled.section`
@@ -36,6 +51,7 @@ const LandingSection = styled.section`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +68,7 @@ const ContactButton = styled.button`
   font-size: 1.2rem;
   font-weight: 600;
   margin-top: 2rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 
   &:hover {
     cursor: pointer;
@@ -79,17 +95,18 @@ const ContactButton = styled.button`
 
 const RBQ = styled.p`
   position: fixed;
-  background-color: #121212;
+  background-color: #101010;
   border-radius: 50px;
   padding: 0.5rem 1rem;
   bottom: 17.5px;
   left: 17.5px;
-  color: #e87500a0;
+  color: #ffffffa0;
   font-size: 1rem;
   font-weight: 400;
   margin-top: 2rem;
   margin-bottom: 1rem;
   text-align: center;
+  cursor: help;
 
   @media (max-width: 768px) {
     font-size: 1rem;
