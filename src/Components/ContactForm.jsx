@@ -10,12 +10,15 @@ const ContactForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.target);
+    const { name, email, message } = event.target.elements;
+    const formData = `name=${encodeURIComponent(name.value)}&email=${encodeURIComponent(
+      email.value
+    )}&message=${encodeURIComponent(message.value)}`;
 
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: formData,
     })
       .then(() => console.log("Form submitted successfully!"))
       .catch((error) => alert(error));
