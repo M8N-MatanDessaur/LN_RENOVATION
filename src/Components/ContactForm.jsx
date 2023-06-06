@@ -7,22 +7,15 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const { name, email, message } = event.target.elements;
-    const formData = `name=${encodeURIComponent(name.value)}&email=${encodeURIComponent(
-      email.value
-    )}&message=${encodeURIComponent(message.value)}`;
-
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: formData,
-    })
-      .then(() => console.log("Form submitted successfully!"))
-      .catch((error) => alert(error));
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your logic here to handle the form submission (e.g., send email)
+    // You can access the form data via the state variables (name, email, message)
+    console.log("Form submitted!");
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
+    // Reset the form after submission
     setName("");
     setEmail("");
     setMessage("");
@@ -32,26 +25,11 @@ const ContactForm = () => {
     <Container>
       <FormContainer>
         <FormTitle>Envoyez nous votre demande</FormTitle>
-        <form
-          onSubmit={handleSubmit}
-          name="contact"
-          method="POST"
-          netlify
-          data-netlify-honeypot="bot-field"
-          action="/"
-          style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center"
-          }}
-        >
-          <input type="hidden" name="form-name" value="contact" />
+        <Form onSubmit={handleSubmit} id="contact-form">
           <FormField>
             <Input
               type="text"
-              name="name"
+              id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -61,7 +39,7 @@ const ContactForm = () => {
           <FormField>
             <Input
               type="email"
-              name="email"
+              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -70,7 +48,7 @@ const ContactForm = () => {
           </FormField>
           <FormField>
             <Textarea
-              name="message"
+              id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
@@ -78,7 +56,7 @@ const ContactForm = () => {
             />
           </FormField>
           <SubmitButton type="submit">envoyer</SubmitButton>
-        </form>
+        </Form>
       </FormContainer>
       <Image></Image>
     </Container>
