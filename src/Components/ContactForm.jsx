@@ -87,7 +87,6 @@ const FormContainer = styled.div`
 const FormTitle = styled.h2`
   color: #fff;
   font-size: 1.8rem;
-  margin-bottom: 2rem;
 `;
 
 const Form = styled.form`
@@ -120,8 +119,10 @@ width: 350px;
   border-radius: 0.3rem;
   resize: none;
   height: 300px;
+
   @media (max-width: 425px) {
     width: 300px;
+    height: 250px;
   }
 `;
 
