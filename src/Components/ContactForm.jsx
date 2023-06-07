@@ -109,7 +109,7 @@ const Input = styled.input`
   border-radius: 0.3rem;
 
   @media (max-width: 425px) {
-    width: 100%;
+    width: 300px;
   }
 `;
 
@@ -119,9 +119,9 @@ width: 350px;
   border: none;
   border-radius: 0.3rem;
   resize: none;
-
+  height: 300px;
   @media (max-width: 425px) {
-    width: 100%;
+    width: 300px;
   }
 `;
 
