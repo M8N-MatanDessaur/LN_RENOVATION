@@ -56,6 +56,7 @@ const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding-bottom: 5rem;
 `;
 
 const Image = styled.div`
