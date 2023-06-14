@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import PageOne from "./Pages/PageOne";
@@ -6,8 +6,17 @@ import Gallery from "./Pages/Gallery";
 import TopPhoneBar from "./Components/TopPhoneBar";
 
 export default function App() {
+  const [showTutorial, setShowTutorial] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowTutorial(false);
+    }, 4000);
+  }, []);
+
   return (
     <BrowserRouter>
+      {showTutorial && <TutorialOverlay />}
       <TopPhoneBar />
       <Routes>
         <Route path="/" element={<PageOne />} />
@@ -18,6 +27,55 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
+const TutorialOverlay = () => (
+  <Overlay>
+    <Instruction top="70px" right="25px">
+      Appuiez ici pour appeler
+      <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="m7 14 5-5 5 5H7Z"></path>
+      </svg>
+    </Instruction>
+    <Instruction bottom="70px" right="25px">
+      Appuiez ici pour voir la galerie
+      <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="m7 9.5 5 5 5-5H7Z"></path>
+      </svg>
+    </Instruction>
+  </Overlay>
+);
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+`;
+
+const Instruction = styled.div`
+  position: absolute;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  ${({ top, bottom, left, right }) => `
+    ${top ? `top: ${top};` : ''}
+    ${bottom ? `bottom: ${bottom};` : ''}
+    ${left ? `left: ${left};` : ''}
+    ${right ? `right: ${right};` : ''}
+  `}
+
+  svg {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+    
+`;
 
 const GalleryButton = () => {
   const location = useLocation();
