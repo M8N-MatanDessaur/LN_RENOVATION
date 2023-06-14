@@ -1,41 +1,32 @@
 import React from "react";
-import { useState } from "react";
 import styled from "styled-components";
+
+import imga from "../Images/a.jpg";
+import imgb from "../Images/b.jpg";
+import imgc from "../Images/c.jpg";
+import imgd from "../Images/d.jpg";
+import imge from "../Images/e.jpg";
+
 
 export default function Services() {
     return (
         <>
             <Title>Nos services</Title>
             <ServicesSection>
-                <ServiceCard>
+                <ServiceCard image={imge}>
                     <ServiceCardTitle>Géstion de projet</ServiceCardTitle>
-                    <ServiceCardDescription>
-                    Rénovations sans stress. Nous gérons tout. Votre chez-vous brille !
-                    </ServiceCardDescription>
                 </ServiceCard>
-                <ServiceCard>
+                <ServiceCard image={imgd}>
                     <ServiceCardTitle>Revetement de plancher</ServiceCardTitle>
-                    <ServiceCardDescription>
-                    Revêtements élégants, sol parfait. En quelques clics !
-                    </ServiceCardDescription>
                 </ServiceCard>
-                <ServiceCard>
+                <ServiceCard image={imgc}>
                     <ServiceCardTitle>Travaux de finition.</ServiceCardTitle>
-                    <ServiceCardDescription>
-                    Finitions expertes, chaque détail compte. Époustouflant intérieur !
-                    </ServiceCardDescription>
                 </ServiceCard>
-                <ServiceCard>
+                <ServiceCard image={imgb}>
                     <ServiceCardTitle>Cuisine et salle de bains</ServiceCardTitle>
-                    <ServiceCardDescription>
-                    Designs innovants. Espaces sublimés !
-                    </ServiceCardDescription>
                 </ServiceCard>
-                <ServiceCard>
+                <ServiceCard image={imga}>
                     <ServiceCardTitle>Excavation et terrasement</ServiceCardTitle>
-                    <ServiceCardDescription>
-                    Creusez, construisez, façonnez ! Merveilles du sol en perspective.
-                    </ServiceCardDescription>
                 </ServiceCard>
                 <OtherServiceCard>
                     <h2 style={{color:"#fff"}}>Et plus encore...</h2>
@@ -75,7 +66,10 @@ const ServiceCard = styled.div`
   width: 350px;
   height: 250px;
   padding: 1rem;
-  background-color: #121212;
+  background-image: linear-gradient( to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url(${(props) => props.image});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 0.5rem;
   padding: 1rem;
   display: flex;
@@ -108,7 +102,7 @@ const OtherServiceCard = styled.div`
   width: 350px;
   height: 250px;
   padding: 1rem;
-  background-color: #121212;
+  background-color: #101010;
   border-radius: 0.5rem;
   padding: 1rem;
   margin-top: 2rem;
@@ -180,27 +174,3 @@ const ServiceCardTitle = styled.h1`
   }
 `;
 
-const ServiceCardDescription = styled.p`
-  color: #fff;
-  overflow-y: auto;
-  font-size: 1rem;
-  font-weight: 400;
-  text-align: center;
-  margin-bottom: 1rem;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 425px) {
-    font-size: 0.8rem;
-  }
-
-  @media (max-width: 375px) {
-    font-size: 0.7rem;
-  }
-
-  @media (max-width: 320px) {
-    font-size: 0.6rem;
-  }
-`;
