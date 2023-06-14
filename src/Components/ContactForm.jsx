@@ -136,7 +136,7 @@ background-color: #e87500;
 color: #fff;
 font-size: 1.2rem;
 font-weight: 600;
-margin-top: 2rem;
+margin-top: 0.5rem;
 transition: all 0.1s ease-in-out;
 
 &:hover {
