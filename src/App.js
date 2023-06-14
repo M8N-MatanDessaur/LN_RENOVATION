@@ -117,6 +117,11 @@ const StyledButton = styled(Link)`
   cursor: pointer;
   filter: drop-shadow(0px 0px 5px #e8750030);	
 
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
   @media (max-width: 768px) {
     font-size: 1rem;
   }
