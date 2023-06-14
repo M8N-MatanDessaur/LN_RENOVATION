@@ -127,11 +127,38 @@ width: 350px;
 `;
 
 const SubmitButton = styled.button`
-  padding: 0.5rem 2rem;
-  background-color: #e87500;
-  color: #fff;
-  border: none;
-  border-radius: 0.3rem;
-  font-size: 1.2rem;
+width: 15rem;
+height: 3rem;
+border: none;
+border-radius: 0.5rem;
+background-color: #e87500;
+color: #fff;
+font-size: 1.2rem;
+font-weight: 600;
+margin-top: 2rem;
+transition: all 0.1s ease-in-out;
+
+&:hover {
   cursor: pointer;
+  background-color: #181818f0;
+  color: #fff;
+  border: 4px solid #e87500;
+}
+
+&:active {
+  transform: scale(0.95);
+  border: 2px solid #e87500;
+}
+
+&:focus {
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  width: 13rem;
+  height: 3rem;
+  padding: 0.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+} 
 `;
