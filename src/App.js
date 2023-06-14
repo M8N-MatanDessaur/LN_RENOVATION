@@ -1,96 +1,73 @@
-import React from 'react';
-import { useRef } from 'react';
-import styled from 'styled-components';
-import TopPhoneBar from './Components/TopPhoneBar';
-import AboutUs from './Components/About';
-import CompanyDetails from './Components/CompanyDetails';
-import Services from './Components/Services';
-import ContactForm from './Components/ContactForm';
-import WhoWeAre from './Components/WhoWeAre';
+import React from "react";
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import styled from "styled-components";
+import PageOne from "./Pages/PageOne";
+import Gallery from "./Pages/Gallery";
+import TopPhoneBar from "./Components/TopPhoneBar";
 
 export default function App() {
-  const ref = useRef(null);
-  const doClick = () => {
-    ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
   return (
-    <AppContainer>
-
+    <BrowserRouter>
       <TopPhoneBar />
-
-      <LandingSection>
-        <CompanyDetails />
-        <AboutUs />
-        <ContactButton onClick={doClick}>Contactez nous</ContactButton>
-      </LandingSection>
-    
-      <WhoWeAre />
-
-      <Services />
-
-      <div ref={ref} style={{height:"100%"}}>
-      <ContactForm/>
-      </div>
-     
+      <Routes>
+        <Route path="/" element={<PageOne />} />
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
       <RBQ>RBQ : 5820-5246-01</RBQ>
-    </AppContainer >
+      <GalleryButton />
+    </BrowserRouter>
   );
 }
 
-const AppContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: #141414;
-`;
+const GalleryButton = () => {
+  const location = useLocation();
 
-const LandingSection = styled.section`
-  width: 100%;
-  height: 100%;
-  background-color: #141414;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.80)),url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  const isGalleryPage = location.pathname === "/gallery";
+
+  return (
+    <StyledButton to={isGalleryPage ? "/" : "/gallery"} isBackButton={isGalleryPage}>
+      <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d={isGalleryPage ? "M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2Z" : "M19 3c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h14Zm-8 13.51L8.5 13.5 5 18h14l-4.5-6-3.5 4.51Z"}
+        ></path>
+      </svg>
+    </StyledButton>
+  );
+};
+
+
+const StyledButton = styled(Link)`
+  position: fixed;
+  height: 40px;
+  width: 50px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-`;
-
-const ContactButton = styled.button`
-  width: 15rem;
-  height: 3rem;
-  border: none;
-  border-radius: 0.5rem;
-  background-color: #e87500;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 600;
+  align-items: center;
+  background-color: #101010;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  bottom: 17.5px;
+  right: 17.5px;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 400;
   margin-top: 2rem;
-  transition: all 0.1s ease-in-out;
-
-  &:hover {
-    cursor: pointer;
-    background-color: #181818f0;
-    color: #fff;
-    border: 4px solid #e87500;
-  }
-
-  &:active {
-    transform: scale(0.95);
-    border: 2px solid #e87500;
-  }
-
-  &:focus {
-    outline: none;
-  }
+  margin-bottom: 1rem;
+  text-align: center;
+  z-index: 1000;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 5px #e8750030);	
 
   @media (max-width: 768px) {
-    width: 10rem;
-    height: 2.5rem;
     font-size: 1rem;
-  } 
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: #202020;
+    transform: scale(1.05);
+  }
 `;
 
 const RBQ = styled.p`
@@ -107,8 +84,11 @@ const RBQ = styled.p`
   margin-bottom: 1rem;
   text-align: center;
   cursor: help;
+  filter: drop-shadow(0px 0px 5px #e8750030);	
+  z-index: 1000;
 
   @media (max-width: 768px) {
     font-size: 1rem;
   }
+};
 `;
