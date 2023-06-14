@@ -6,7 +6,7 @@ export default function WhoWeAre() {
         <Container>
             <BlockQuote>
                 <br />
-Nous sommes des experts en gestion de projets, coordination d'équipes et nous nous engageons à fournir des résultats de haute qualité. Avec une expérience de 6 ans dans le domaine de la construction, nous offrons des services complets et sans tracas. Notre équipe est composée de jeunes professionnels talentueux. Nous garantissons le respect des délais et nous nous efforçons de dépasser les attentes de nos clients. Grâce à notre vaste expérience dans l'industrie, nous sommes capables de gérer des projets diversifiés en sélectionnant les meilleurs matériaux et en assurant la sécurité à chaque étape du processus.
+                En tant qu'experts en gestion de projets et coordination d'équipes avec 6 ans d'expérience dans la construction, notre jeune compagnie basée à Montréal offre des services complets de haute qualité. Notre équipe talentueuse s'engage à respecter les délais et à dépasser les attentes des clients, tout en sélectionnant les meilleurs matériaux et en assurant une sécurité optimale. Notre processus transparent et notre système de feedback solide garantissent une expérience client sans faille à chaque étape de votre projet. Satisfaction assurée !
             </BlockQuote>
         </Container>
     )

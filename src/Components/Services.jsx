@@ -3,7 +3,6 @@ import { useState } from "react";
 import styled from "styled-components";
 
 export default function Services() {
-    const [hoveredIndex, setHoveredIndex] = useState(null);
     return (
         <>
             <Title>Nos services</Title>
@@ -11,31 +10,31 @@ export default function Services() {
                 <ServiceCard>
                     <ServiceCardTitle>Géstion de projet</ServiceCardTitle>
                     <ServiceCardDescription>
-                        La magie opère! Transformez vos projets de rénovation en une expérience sans stress. Du rafraîchissement des couleurs aux métamorphoses complètes, nous gérons tout. Détendez-vous et laissez-nous faire briller votre chez-vous!
+                    Rénovations sans stress. Nous gérons tout. Votre chez-vous brille !
                     </ServiceCardDescription>
                 </ServiceCard>
                 <ServiceCard>
                     <ServiceCardTitle>Revetement de plancher</ServiceCardTitle>
                     <ServiceCardDescription>
-                        Dansez sur nos revêtements! Des sols qui vous font vibrer. Du parquet élégant aux carrelages audacieux, nous couvrons toutes vos envies. Une équipe de pros pour un sol parfait. Plancher de rêve en quelques clics!
+                    Revêtements élégants, sol parfait. En quelques clics !
                     </ServiceCardDescription>
                 </ServiceCard>
                 <ServiceCard>
                     <ServiceCardTitle>Travaux de finition.</ServiceCardTitle>
                     <ServiceCardDescription>
-                        Les derniers détails qui font la différence! Experts en travaux de finition, nous ajoutons la touche finale à votre projet. Des moulures impeccables aux peintures artistiques, chaque détail compte. Votre espace prend vie avec notre finesse. Finitions qui éblouissent, pour un intérieur qui épate!
+                    Finitions expertes, chaque détail compte. Époustouflant intérieur !
                     </ServiceCardDescription>
                 </ServiceCard>
                 <ServiceCard>
                     <ServiceCardTitle>Cuisine et salle de bains</ServiceCardTitle>
                     <ServiceCardDescription>
-                        Élevez votre cuisine et salle de bains à un niveau épique! Des designs innovants aux installations fonctionnelles, nous créons des espaces qui impressionnent. Des cuisines qui font saliver et des salles de bains qui détendent. Une expertise culinaire pour une expérience enivrante. Laissez-nous sublimer vos instants gourmands et relaxants!
+                    Designs innovants. Espaces sublimés !
                     </ServiceCardDescription>
                 </ServiceCard>
                 <ServiceCard>
                     <ServiceCardTitle>Excavation et terrasement</ServiceCardTitle>
                     <ServiceCardDescription>
-                        Creusez plus profond, construisez plus haut! Spécialistes de l'excavation et du terrassement, nous préparons le terrain pour vos projets ambitieux. Du creusage précis aux fondations solides, notre équipe maîtrise chaque étape. Nous façonnons votre vision avec puissance et précision. Laissez-nous faire naître des merveilles du sol!
+                    Creusez, construisez, façonnez ! Merveilles du sol en perspective.
                     </ServiceCardDescription>
                 </ServiceCard>
                 <OtherServiceCard>
@@ -74,7 +73,7 @@ const ServicesSection = styled.section`
 
 const ServiceCard = styled.div`
   width: 350px;
-  height: 350px;
+  height: 250px;
   padding: 1rem;
   background-color: #121212;
   border-radius: 0.5rem;
@@ -107,7 +106,7 @@ const ServiceCard = styled.div`
 
 const OtherServiceCard = styled.div`
   width: 350px;
-  height: 350px;
+  height: 250px;
   padding: 1rem;
   background-color: #121212;
   border-radius: 0.5rem;
@@ -118,7 +117,7 @@ const OtherServiceCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
 
   @media (max-width: 768px) {
     width: 300px;
@@ -128,7 +127,7 @@ const OtherServiceCard = styled.div`
 
 const OtherServiceTitle = styled.h1`
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   text-align: center;
   border-radius: 5rem;
@@ -159,7 +158,7 @@ const OtherServiceTitle = styled.h1`
 
 const ServiceCardTitle = styled.h1`
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 1rem;
   text-align: center;

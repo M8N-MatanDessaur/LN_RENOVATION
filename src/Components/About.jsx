@@ -5,12 +5,7 @@ export default function AboutUs() {
     return (
         <AboutUsContainer>
             <AboutUsText>
-            Nous sommes une jeune compagnie basée à Montréal, 
-            offrant un service clef-en-main axé sur la qualité, 
-            le souci du détail et la satisfaction du client. 
-            Notre processus transparent et notre système de 
-            feedback solide garantissent une expérience client sans 
-            faille à chaque étape de votre projet
+                Notre processus clef-en-main vous guide tout au long de votre projet, couvrant Montréal et ses environs.
             </AboutUsText>
         </AboutUsContainer>
     )

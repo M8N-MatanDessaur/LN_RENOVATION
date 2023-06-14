@@ -84,8 +84,10 @@ const ContactButton = styled.button`
   }
 
   @media (max-width: 768px) {
-    width: 10rem;
-    height: 2.5rem;
+    width: 13rem;
+    height: 3rem;
+    padding: 0.5rem;
+    border-radius: 50px;
     font-size: 1rem;
   } 
 `;
