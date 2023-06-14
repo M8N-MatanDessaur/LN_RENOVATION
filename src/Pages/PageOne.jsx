@@ -69,14 +69,14 @@ const ContactButton = styled.button`
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  &:active {
+    cursor: pointer;
     background-color: #181818f0;
     color: #fff;
     border: 4px solid #e87500;
-  }
-
-  &:active {
-    transform: scale(0.95);
-    border: 2px solid #e87500;
   }
 
   &:focus {

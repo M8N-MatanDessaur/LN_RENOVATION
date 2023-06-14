@@ -140,14 +140,14 @@ transition: all 0.1s ease-in-out;
 
 &:hover {
   cursor: pointer;
-  background-color: #181818f0;
-  color: #fff;
-  border: 4px solid #e87500;
+  transform: scale(1.05);
 }
 
 &:active {
-  transform: scale(0.95);
-  border: 2px solid #e87500;
+  cursor: pointer;
+  background-color: #181818f0;
+  color: #fff;
+  border: 4px solid #e87500;
 }
 
 &:focus {
