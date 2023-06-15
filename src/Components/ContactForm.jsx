@@ -7,7 +7,10 @@ const ContactForm = () => {
   return (
     <Container>
       <FormContainer>
-        <FormTitle>Envoyez nous votre demande</FormTitle>
+        <div>
+        <FormTitle>Envoyez nous vos informations</FormTitle>
+        <p style={{color: "#ffffff80", fontSize: "1rem"}}>Nous vous contacterons dans les plus brefs délais</p>
+        </div>
         <Form action="https://api.web3forms.com/submit" method="POST" id="form">
         <input type="hidden" name="access_key" value="7eb4362d-046f-40df-8bc3-9816007969df" />
         <input type="hidden" name="subject" value="New Request 📃" />
@@ -31,11 +34,12 @@ const ContactForm = () => {
             />
           </FormField>
           <FormField>
-            <Textarea
-              id="message"
+            <Input
+              type="phone"
+              id="phone"
               required
-              placeholder="Entrez votre demande"
-              name="message"
+              placeholder="Entrez votre numéro"
+              name="phone"
             />
           </FormField>
           <SubmitButton type="submit">envoyer</SubmitButton>
@@ -120,19 +124,6 @@ const Input = styled.input`
   }
 `;
 
-const Textarea = styled.textarea`
-width: 350px;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 0.3rem;
-  resize: none;
-  height: 230px;
-
-  @media (max-width: 425px) {
-    width: 300px;
-    height: 180px;
-  }
-`;
 
 const SubmitButton = styled.button`
 width: 15rem;
