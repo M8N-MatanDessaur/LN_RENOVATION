@@ -87,6 +87,14 @@ const FormContainer = styled.div`
 const FormTitle = styled.h2`
   color: #fff;
   font-size: 1.8rem;
+
+  @media (max-width: 425px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Form = styled.form`
@@ -118,11 +126,11 @@ width: 350px;
   border: none;
   border-radius: 0.3rem;
   resize: none;
-  height: 250px;
+  height: 230px;
 
   @media (max-width: 425px) {
     width: 300px;
-    height: 200px;
+    height: 180px;
   }
 `;
 
