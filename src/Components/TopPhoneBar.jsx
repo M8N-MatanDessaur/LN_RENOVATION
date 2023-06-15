@@ -16,7 +16,7 @@ const TopPhoneBarContainer = styled.a`
     width: max-content;
     padding: 0 20px;
     border-radius: 50px;
-    height: 70px;
+    height: 65px;
     background-color: #101010;
     color: #fff;
     text-decoration: none;
@@ -28,6 +28,7 @@ const TopPhoneBarContainer = styled.a`
     justify-content: center;
     gap: 10px;
     z-index: 100;
+    filter: drop-shadow(0px 0px 5px #e8750020);	
     transition: all 100ms ease-in-out;
 
     &:hover {
@@ -39,6 +40,7 @@ const TopPhoneBarContainer = styled.a`
         top: 0;
         right: 0;
         border-radius: 0;
+        filter: drop-shadow(0px 0px 0px #00000000);	
         padding: 0 10px;
     }
 `;

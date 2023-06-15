@@ -56,7 +56,6 @@ const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding-bottom: 5rem;
 `;
 
 const Image = styled.div`
@@ -119,11 +118,11 @@ width: 350px;
   border: none;
   border-radius: 0.3rem;
   resize: none;
-  height: 300px;
+  height: 250px;
 
   @media (max-width: 425px) {
     width: 300px;
-    height: 250px;
+    height: 200px;
   }
 `;
 

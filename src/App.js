@@ -36,7 +36,7 @@ const TutorialOverlay = () => (
         <path d="m7 14 5-5 5 5H7Z"></path>
       </svg>
     </Instruction>
-    <Instruction bottom="70px" right="25px">
+    <Instruction bottom="80px" right="25px">
       Appuiez ici pour voir la galerie
       <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="m7 9.5 5 5 5-5H7Z"></path>
@@ -96,8 +96,8 @@ const GalleryButton = () => {
 
 const StyledButton = styled(Link)`
   position: fixed;
-  height: 40px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,7 +107,6 @@ const StyledButton = styled(Link)`
   bottom: 17.5px;
   right: 17.5px;
   color: #ffffff;
-  font-size: 2rem;
   font-weight: 400;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -115,11 +114,11 @@ const StyledButton = styled(Link)`
   z-index: 1000;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-  filter: drop-shadow(0px 0px 5px #e8750030);	
+  filter: drop-shadow(0px 0px 5px #e8750020);	
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
 
   @media (max-width: 768px) {
@@ -137,7 +136,7 @@ const RBQ = styled.p`
   position: fixed;
   background-color: #101010;
   border-radius: 50px;
-  padding: 0.5rem 1rem;
+  padding: 17px 1rem;
   bottom: 17.5px;
   left: 17.5px;
   color: #ffffffa0;
@@ -147,7 +146,7 @@ const RBQ = styled.p`
   margin-bottom: 1rem;
   text-align: center;
   cursor: help;
-  filter: drop-shadow(0px 0px 5px #e8750030);	
+  filter: drop-shadow(0px 0px 5px #e8750020);	
   z-index: 1000;
 
   @media (max-width: 768px) {

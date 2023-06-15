@@ -77,6 +77,13 @@ const ServiceCard = styled.div`
   align-items: center;
   justify-content: center;
 
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
+    background-position: top;
+  }
+
   @media (max-width: 768px) {
     width: 300px;
     height: 300px;
@@ -133,6 +140,12 @@ const OtherServiceTitle = styled.h1`
   align-items: center;
   justify-content: center;
 
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
+  }
+
   @media (max-width: 768px) {
     font-size: 1.5rem;
   }
@@ -156,7 +169,7 @@ const ServiceCardTitle = styled.h1`
   font-weight: 600;
   margin-bottom: 1rem;
   text-align: center;
-  
+
   @media (max-width: 768px) {
     font-size: 1.5rem;
   }

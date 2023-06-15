@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 
 import img1 from "../Images/1.jpg";
@@ -12,6 +12,10 @@ import img8 from "../Images/8.jpg";
 import img9 from "../Images/9.jpg";
 
 export default function Gallery() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <GalleryContainer>
             <GalleryGrid>
@@ -63,7 +67,3 @@ const GalleryImage = styled.img`
         z-index: 1;
     }
 `;
-
-
-
-
