@@ -5,6 +5,8 @@ import PageOne from "./Pages/PageOne";
 import Gallery from "./Pages/Gallery";
 import TopPhoneBar from "./Components/TopPhoneBar";
 
+import logo from "./Images/logo.svg";
+
 export default function App() {
   const [showTutorial, setShowTutorial] = useState(true);
 
@@ -28,22 +30,31 @@ export default function App() {
   );
 }
 
-const TutorialOverlay = () => (
-  <Overlay>
-    <Instruction top="70px" right="25px">
-      Appuiez ici pour appeler
-      <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="m7 14 5-5 5 5H7Z"></path>
-      </svg>
-    </Instruction>
-    <Instruction bottom="80px" right="25px">
-      Appuiez ici pour voir la galerie
-      <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="m7 9.5 5 5 5-5H7Z"></path>
-      </svg>
-    </Instruction>
-  </Overlay>
-);
+const TutorialOverlay = () => {
+  const [showOverlay, setShowOverlay] = useState(true);
+
+  const handleClick = () => {
+    setShowOverlay(false);
+  };
+
+  return (
+    <Overlay onClick={handleClick} hidden={!showOverlay}>
+      <Logo src={logo} alt="logo" />
+      <Instruction top="70px" right="25px">
+        Appuiez ici pour appeler
+        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="m7 14 5-5 5 5H7Z"></path>
+        </svg>
+      </Instruction>
+      <Instruction bottom="80px" right="25px">
+        Appuiez ici pour voir la galerie
+        <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="m7 9.5 5 5 5-5H7Z"></path>
+        </svg>
+      </Instruction>
+    </Overlay>
+  );
+};
 
 const Overlay = styled.div`
   position: fixed;
@@ -51,8 +62,20 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(2px);
   z-index: 2000;
+  display: ${({ hidden }) => (hidden ? 'none' : 'block')};
+`;
+
+const Logo = styled.img`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 50%;
+  height: 200px;
+  z-index: 3000;
 `;
 
 const Instruction = styled.div`
