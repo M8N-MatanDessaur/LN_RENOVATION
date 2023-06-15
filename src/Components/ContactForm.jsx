@@ -8,7 +8,7 @@ const ContactForm = () => {
     <Container>
       <FormContainer>
         <div>
-        <FormTitle>Envoyez nous vos informations</FormTitle>
+        <FormTitle>Contactez nous</FormTitle>
         <p style={{color: "#ffffff80", fontSize: "1rem"}}>Nous vous contacterons dans les plus brefs délais</p>
         </div>
         <Form action="https://api.web3forms.com/submit" method="POST" id="form">
