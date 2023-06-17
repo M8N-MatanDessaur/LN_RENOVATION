@@ -9,7 +9,7 @@ const ContactForm = () => {
       <FormContainer>
         <div>
         <FormTitle>Contactez nous</FormTitle>
-        <p style={{color: "#ffffff80", fontSize: "1rem"}}>Nous vous contacterons dans les plus brefs délais</p>
+        <FormSubtitle>Nous vous contacterons dans les plus brefs délais</FormSubtitle>
         </div>
         <Form action="https://api.web3forms.com/submit" method="POST" id="form">
         <input type="hidden" name="access_key" value="7eb4362d-046f-40df-8bc3-9816007969df" />
@@ -98,6 +98,15 @@ const FormTitle = styled.h2`
 
   @media (max-width: 320px) {
     font-size: 1.1rem;
+  }
+`;
+
+const FormSubtitle = styled.p`
+  color: #ffffff80;
+  font-size: 1rem;
+
+  @media (max-width: 425px) {
+    font-size: 0.85rem;
   }
 `;
 
