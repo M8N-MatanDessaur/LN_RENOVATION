@@ -8,6 +8,15 @@ import ContactForm from '../Components/ContactForm';
 import WhoWeAre from '../Components/WhoWeAre';
 
 export default function PageOne() {
+
+  // JavaScript code
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+  if (isSafari) {
+    const landingSection = document.querySelector('.landing-section');
+    landingSection.style.backgroundAttachment = 'scroll';
+  }
+
   const ref = useRef(null);
   const doClick = () => {
     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -15,7 +24,7 @@ export default function PageOne() {
   return (
     <AppContainer>
 
-      <LandingSection>
+      <LandingSection className='landing-section'>
         <CompanyDetails />
         <AboutUs />
         <ContactButton onClick={doClick}>Contactez nous</ContactButton>
@@ -48,7 +57,6 @@ const LandingSection = styled.section`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
