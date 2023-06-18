@@ -1,5 +1,4 @@
-import React from 'react';
-import { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import AboutUs from '../Components/About';
 import CompanyDetails from '../Components/CompanyDetails';
@@ -8,23 +7,23 @@ import ContactForm from '../Components/ContactForm';
 import WhoWeAre from '../Components/WhoWeAre';
 
 export default function PageOne() {
-
-  // JavaScript code
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-
-  if (isSafari) {
-    const landingSection = document.querySelector('.landing-section');
-    landingSection.style.backgroundAttachment = 'scroll';
-  }
-
   const ref = useRef(null);
   const doClick = () => {
     ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
+
+  useEffect(() => {
+    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
+    if (isSafari) {
+      const landingSection = ref.current;
+      landingSection.style.backgroundAttachment = 'scroll';
+    }
+  }, []);
+
   return (
     <AppContainer>
-
-      <LandingSection className='landing-section'>
+      <LandingSection ref={ref}>
         <CompanyDetails />
         <AboutUs />
         <ContactButton onClick={doClick}>Contactez nous</ContactButton>
@@ -34,12 +33,10 @@ export default function PageOne() {
 
       <Services />
 
-      <div ref={ref} style={{ height: "100%" }}>
+      <div style={{ height: "100%" }}>
         <ContactForm />
       </div>
-
-
-    </AppContainer >
+    </AppContainer>
   );
 }
 
@@ -52,8 +49,8 @@ const AppContainer = styled.div`
 const LandingSection = styled.section`
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.80)),url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80');
-  -webkit-background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.80)),url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.80)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80');
+  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.80)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -80,7 +77,7 @@ const ContactButton = styled.button`
     cursor: pointer;
     transform: scale(1.05);
   }
-  
+
   &:active {
     cursor: pointer;
     background-color: #181818f0;
@@ -98,6 +95,5 @@ const ContactButton = styled.button`
     padding: 0.5rem;
     border-radius: 50px;
     font-size: 1rem;
-  } 
+  }
 `;
-
