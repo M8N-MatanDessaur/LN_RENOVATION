@@ -48,17 +48,12 @@ const LandingSection = styled.section`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: scroll;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  @media not all and (min-resolution: 0.001dpcm) {
-    @supports (-webkit-appearance:none) {
-        background-attachment: scroll;
-    }
-  }
 `;
 
 const ContactButton = styled.button`
