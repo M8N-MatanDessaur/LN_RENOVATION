@@ -54,11 +54,11 @@ const LandingSection = styled.section`
   align-items: center;
   justify-content: center;
 
-  /* For Apple devices */
-@media only screen and (max-device-width: 1024px) {
-    background-attachment: scroll;
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        background-attachment: scroll;
+    }
   }
-}
 `;
 
 const ContactButton = styled.button`
