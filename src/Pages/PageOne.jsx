@@ -33,7 +33,7 @@ export default function PageOne() {
 
       <WhoWeAre />
 
-      <Services />
+      <Services handleClick={doClick}/>
 
       <div style={{ height: "100%" }} ref={refContact}>
         <ContactForm/>

@@ -7,32 +7,32 @@ import imgc from "../Images/c.jpg";
 import imgd from "../Images/d.jpg";
 import imge from "../Images/e.jpg";
 
-export default function Services() {
+export default function Services({handleClick}) {
   return (
     <>
       <Title>Nos services</Title>
       <ServicesSection>
-        <ServiceCard image={imge}>
+        <ServiceCard image={imge} onClick={handleClick}>
           <ServiceCardTitle>Gestion de projet</ServiceCardTitle>
         </ServiceCard>
-        <ServiceCard image={imgd}>
+        <ServiceCard image={imgd} onClick={handleClick}>
           <ServiceCardTitle>Revetement de plancher</ServiceCardTitle>
         </ServiceCard>
-        <ServiceCard image={imgc}>
+        <ServiceCard image={imgc} onClick={handleClick}>
           <ServiceCardTitle>Travaux de finition</ServiceCardTitle>
         </ServiceCard>
-        <ServiceCard image={imgb}>
+        <ServiceCard image={imgb} onClick={handleClick}>
           <ServiceCardTitle>Cuisine et salle de bains</ServiceCardTitle>
         </ServiceCard>
-        <ServiceCard image={imga}>
+        <ServiceCard image={imga} onClick={handleClick}>
           <ServiceCardTitle>Excavation et terrasement</ServiceCardTitle>
         </ServiceCard>
         <OtherServiceCard>
           <OtherServiceHeading>Et plus encore...</OtherServiceHeading>
-          <OtherServiceTitle>Drains Français</OtherServiceTitle>
-          <OtherServiceTitle>Dalle de béton</OtherServiceTitle>
-          <OtherServiceTitle>Pavé</OtherServiceTitle>
-          <OtherServiceTitle>Démolition</OtherServiceTitle>
+          <OtherServiceTitle onClick={handleClick}>Drains Français</OtherServiceTitle>
+          <OtherServiceTitle onClick={handleClick}>Dalle de béton</OtherServiceTitle>
+          <OtherServiceTitle onClick={handleClick}>Pavé</OtherServiceTitle>
+          <OtherServiceTitle onClick={handleClick}>Démolition</OtherServiceTitle>
         </OtherServiceCard>
       </ServicesSection>
     </>
