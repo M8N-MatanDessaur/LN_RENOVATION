@@ -20,15 +20,15 @@ export default function PageOne() {
         <AboutUs />
         <ContactButton onClick={doClick}>Contactez nous</ContactButton>
       </LandingSection>
-    
+
       <WhoWeAre />
 
       <Services />
 
-      <div ref={ref} style={{height:"100%"}}>
-      <ContactForm/>
+      <div ref={ref} style={{ height: "100%" }}>
+        <ContactForm />
       </div>
-     
+
 
     </AppContainer >
   );
@@ -44,7 +44,7 @@ const LandingSection = styled.section`
   width: 100%;
   height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.80)),url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80');
-  background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.80)),url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80');
+  -webkit-background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.80)),url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2600&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
