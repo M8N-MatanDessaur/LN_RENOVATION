@@ -8,8 +8,10 @@ import WhoWeAre from '../Components/WhoWeAre';
 
 export default function PageOne() {
   const ref = useRef(null);
+  const refContact = useRef(null);
+  
   const doClick = () => {
-    ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    refContact.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   useEffect(() => {
@@ -33,8 +35,8 @@ export default function PageOne() {
 
       <Services />
 
-      <div style={{ height: "100%" }}>
-        <ContactForm />
+      <div style={{ height: "100%" }} ref={refContact}>
+        <ContactForm/>
       </div>
     </AppContainer>
   );
