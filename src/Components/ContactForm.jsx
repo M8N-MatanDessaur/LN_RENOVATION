@@ -12,7 +12,7 @@ const ContactForm = () => {
         <FormSubtitle>Nous vous contacterons dans les plus brefs délais</FormSubtitle>
         </div>
         <Form action="https://api.web3forms.com/submit" method="POST" id="form">
-        <input type="hidden" name="access_key" value="7eb4362d-046f-40df-8bc3-9816007969df" />
+        <input type="hidden" name="access_key" value="0037ea31-132b-4474-b770-8d56a03aa6af" />
         <input type="hidden" name="subject" value="New Request 📃" />
         <input type="hidden" name="from_name" value="LNRenovations:Request" />
           <FormField>
