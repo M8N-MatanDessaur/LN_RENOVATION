@@ -1,32 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 
-import imga from "../Images/a.jpg";
-import imgb from "../Images/b.jpg";
-import imgc from "../Images/c.jpg";
-import imgd from "../Images/d.jpg";
-import imge from "../Images/e.jpg";
+import a from "../Images/a.jpg";
+import b from "../Images/b.jpg";
+import c from "../Images/c.jpg";
+import d from "../Images/d.jpg";
+import e from "../Images/e.jpg";
 
-export default function Services({handleClick}) {
+const servicesData = [
+  { image: e, title: "Gestion de projet" },
+  { image: d, title: "Revêtement de plancher" },
+  { image: c, title: "Travaux de finition" },
+  { image: b, title: "Cuisine et salle de bains" },
+  { image: a, title: "Excavation et terrassement" },
+];
+
+export default function Services({ handleClick }) {
   return (
     <>
       <Title>Nos services</Title>
       <ServicesSection>
-        <ServiceCard image={imge} onClick={handleClick}>
-          <ServiceCardTitle>Gestion de projet</ServiceCardTitle>
-        </ServiceCard>
-        <ServiceCard image={imgd} onClick={handleClick}>
-          <ServiceCardTitle>Revetement de plancher</ServiceCardTitle>
-        </ServiceCard>
-        <ServiceCard image={imgc} onClick={handleClick}>
-          <ServiceCardTitle>Travaux de finition</ServiceCardTitle>
-        </ServiceCard>
-        <ServiceCard image={imgb} onClick={handleClick}>
-          <ServiceCardTitle>Cuisine et salle de bains</ServiceCardTitle>
-        </ServiceCard>
-        <ServiceCard image={imga} onClick={handleClick}>
-          <ServiceCardTitle>Excavation et terrasement</ServiceCardTitle>
-        </ServiceCard>
+        {servicesData.map((service, index) => (
+          <ServiceCard
+            key={index}
+            image={service.image}
+            onClick={handleClick}
+          >
+            <ServiceCardTitle>{service.title}</ServiceCardTitle>
+          </ServiceCard>
+        ))}
         <OtherServiceCard>
           <OtherServiceHeading>Et plus encore...</OtherServiceHeading>
           <OtherServiceTitle onClick={handleClick}>Drains Français</OtherServiceTitle>
@@ -108,7 +110,6 @@ const OtherServiceCard = styled.div`
   padding: 1rem;
   background-color: #101010;
   border-radius: 0.5rem;
-  margin: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -187,4 +188,5 @@ const ServiceCardTitle = styled.h2`
   @media (max-width: 320px) {
     font-size: 0.8rem;
   }
+};
 `;
