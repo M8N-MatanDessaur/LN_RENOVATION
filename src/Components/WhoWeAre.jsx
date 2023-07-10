@@ -5,7 +5,6 @@ export default function WhoWeAre() {
     return (
         <Container>
             <BlockQuote>
-                <br />
                 En tant qu'experts en gestion de projets et coordination d'équipes avec 6 ans d'expérience dans la construction, notre jeune compagnie basée à Montréal offre des services complets de haute qualité. Notre équipe talentueuse s'engage à respecter les délais et à dépasser les attentes des clients, tout en sélectionnant les meilleurs matériaux et en assurant une sécurité optimale. Notre processus transparent et notre système de feedback solide garantissent une expérience client sans faille à chaque étape de votre projet. Satisfaction assurée !
             </BlockQuote>
         </Container>
@@ -32,19 +31,6 @@ const BlockQuote = styled.blockquote`
 
     @media screen and (max-width: 320px) {
         font-size: 0.6rem;
-    }
-
-    &::before {
-        content: open-quote;
-        font-size: 4rem;
-        color: #00000080;
-        line-height: 0.1;
-        margin-right: 0.25em;
-        vertical-align: -0.4em;
-    }
-
-    &::after {
-        content: "";
     }
 `;
 
