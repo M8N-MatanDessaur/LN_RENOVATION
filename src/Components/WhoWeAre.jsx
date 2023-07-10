@@ -37,7 +37,7 @@ const BlockQuote = styled.blockquote`
     &::before {
         content: open-quote;
         font-size: 4rem;
-        color: #fff;
+        color: #00000080;
         line-height: 0.1;
         margin-right: 0.25em;
         vertical-align: -0.4em;
